@@ -1,27 +1,43 @@
 package com.bridgelabz.linkedlist;
-/*Problem Statement
- * UC-1 Lets create a simple Linked List of 56, 30 and 70
- *  UC-2 Ability to create Linked List by adding 30 and 56 to 70
-- Node with data 70 is First Created
-- Next 30 is added to 70
-- Finally 56 is added to 30
+/*Problem Statement UC-3
+ * Ability to create Linked List by appending 30 and 70 to 56
+- Node with data 56 is First Created
+- Next Append 30 to 56
+- Finally Append 70 to 30
 - LinkedList Sequence: 56->30->70
  */
 class LinkedListOperations {
 	Node head;
-	static int counter = 0;
-		//Method for Add Element in first position 
+	static int counter = 0;			//take counter to calculate the number of nodes present in Linkedlist
+
+	// Method for Add Element in first position
 	public void insertFirst(int data) {
-		Node newNode = new Node(data);			//create New node
+		Node newNode = new Node(data); // create New node
 		if (head == null) {
 			head = newNode;
 		} else {
 			newNode.next = head;
 			head = newNode;
 		}
-		counter++;					//Increement Counter
+		counter++; // Increement Counter
 	}
-		//Method for Display Element
+
+	// Create method for insert element in last position
+	public void insertLast(int data) {
+		Node newNode = new Node(data);
+		if (head == null) {
+			head = newNode;
+		} else {
+			Node temp = head;
+			while (temp.next != null) {
+				temp = temp.next;
+			}
+			temp.next = newNode;
+		}
+		counter++;
+	}
+
+	// Method for Display Element
 	public void display() {
 		if (head == null) {
 			System.out.println("List is empty!!");

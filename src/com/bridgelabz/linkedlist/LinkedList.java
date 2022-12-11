@@ -1,10 +1,9 @@
 package com.bridgelabz.linkedlist;
-/*Problem Statement
- * UC-1 Lets create a simple Linked List of 56, 30 and 70
- * UC-2 Ability to create Linked List by adding 30 and 56 to 70
-- Node with data 70 is First Created
-- Next 30 is added to 70
-- Finally 56 is added to 30
+/*Problem Statement UC-3
+ * Ability to create Linked List by appending 30 and 70 to 56
+- Node with data 56 is First Created
+- Next Append 30 to 56
+- Finally Append 70 to 30
 - LinkedList Sequence: 56->30->70
  */
 import java.util.Scanner;
@@ -15,7 +14,7 @@ public class LinkedList {
 		int choice = 0;
 		//infinite loop for choice
 		do {
-			System.out.println("1.InsertFirst\n2.Display\n3.Exit");
+			System.out.println("1.InsertFirst\n2.InsertLast\n3.Display\n4.Exit");
 			System.out.println("Enter Choice:");
 			choice = scanner.nextInt();
 			switch (choice) {
@@ -24,16 +23,20 @@ public class LinkedList {
 				list.insertFirst(scanner.nextInt());
 				break;
 			case 2:
-				list.display();
+				list.insertLast(scanner.nextInt());;
 				System.out.println();
 				break;
 			case 3:
+				list.display();
+				System.out.println();
+				break;
+			case 4:
 				System.out.println("Byeee!!");
 				break;
 			default:
 				System.out.println("Select From Menu");
 			}
-		} while (choice != 3);
+		} while (choice != 4);
 		scanner.close();
 	}
 }
