@@ -28,7 +28,7 @@ public class LinkedList {
 				list.insertNthPosition(scanner.nextInt(), scanner.nextInt());
 				break;
 			case 4:
-				list.display();;
+				list.display();
 				System.out.println();
 				break;
 			case 5:
