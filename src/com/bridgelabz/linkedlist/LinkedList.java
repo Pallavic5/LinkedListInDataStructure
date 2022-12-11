@@ -1,9 +1,9 @@
 package com.bridgelabz.linkedlist;
-/*Problem Statement UC-5
- * Ability to delete the first element in the LinkedList of sequence 56->30->70 
- * - Write pop method
-- Note there is new head
-- Final Sequence: 30->70
+/*Problem Statement UC-6
+ * Ability to delete the last element in the LinkedList of sequence 56->30->70 
+ * - Write popLast method
+- Note there is new tail
+- Final Sequence: 56->30
  */
 import java.util.Scanner;
 public class LinkedList {
@@ -13,7 +13,7 @@ public class LinkedList {
 		int choice = 0;
 		//infinite loop for choice
 		do {
-			System.out.println("1.InsertFirst\n2.InsertLast\n3.InsertNthPos\n4.RemoveFirst\n5.Display\n6.Exit");
+			System.out.println("1.InsertFirst\n2.InsertLast\n3.InsertNthPos\n4.RemoveFirst\n5.RemoveLast\n6.Display\n7.Exit");
 			System.out.println("Enter Choice:");
 			choice = scanner.nextInt();
 			switch (choice) {
@@ -33,16 +33,19 @@ public class LinkedList {
 				list.removeFirst();
 				break;
 			case 5:
+				list.removeLast();
+				break;
+			case 6:
 				list.display();
 				System.out.println();
 				break;
-			case 6:
+			case 7:
 				System.out.println("Byeee!!");
 				break;
 			default:
 				System.out.println("Select From Menu");
 			}
-		} while (choice != 6);
+		} while (choice != 7);
 		scanner.close();
 	}
 }
