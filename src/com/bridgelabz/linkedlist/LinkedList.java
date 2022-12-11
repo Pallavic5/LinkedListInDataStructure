@@ -1,7 +1,9 @@
 package com.bridgelabz.linkedlist;
-/*Problem Statement UC-4
- * Ability to insert 30 between 56 and 70
-- Final Sequence: 56->30->70
+/*Problem Statement UC-5
+ * Ability to delete the first element in the LinkedList of sequence 56->30->70 
+ * - Write pop method
+- Note there is new head
+- Final Sequence: 30->70
  */
 import java.util.Scanner;
 public class LinkedList {
@@ -11,7 +13,7 @@ public class LinkedList {
 		int choice = 0;
 		//infinite loop for choice
 		do {
-			System.out.println("1.InsertFirst\n2.InsertLast\n3.InsertNthPos\n4.Display\n5.Exit");
+			System.out.println("1.InsertFirst\n2.InsertLast\n3.InsertNthPos\n4.RemoveFirst\n5.Display\n6.Exit");
 			System.out.println("Enter Choice:");
 			choice = scanner.nextInt();
 			switch (choice) {
@@ -28,16 +30,19 @@ public class LinkedList {
 				list.insertNthPosition(scanner.nextInt(), scanner.nextInt());
 				break;
 			case 4:
+				list.removeFirst();
+				break;
+			case 5:
 				list.display();
 				System.out.println();
 				break;
-			case 5:
+			case 6:
 				System.out.println("Byeee!!");
 				break;
 			default:
 				System.out.println("Select From Menu");
 			}
-		} while (choice != 5);
+		} while (choice != 6);
 		scanner.close();
 	}
 }

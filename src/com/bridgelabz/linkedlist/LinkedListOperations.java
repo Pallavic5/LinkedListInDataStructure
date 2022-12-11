@@ -1,7 +1,9 @@
 package com.bridgelabz.linkedlist;
-/*Problem Statement UC-4
- * Ability to insert 30 between 56 and 70
-- Final Sequence: 56->30->70
+/*Problem Statement UC-5
+ * Ability to delete the first element in the LinkedList of sequence 56->30->70 
+ * - Write pop method
+- Note there is new head
+- Final Sequence: 30->70
  */
 class LinkedListOperations {
 	Node head;
@@ -53,6 +55,18 @@ class LinkedListOperations {
 				temp.next = newNode;
 			}
 			//counter++;
+		}
+		//Method for delete first element
+		public void removeFirst() {
+			if(head == null) {
+				System.out.println("List is Empty!!");
+			}
+			else {
+				Node temp = head;
+				head = head.next;
+				temp.next = null;
+				temp = null;
+			}
 		}
 	// Method for Display Element
 	public void display() {
