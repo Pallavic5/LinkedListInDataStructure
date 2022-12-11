@@ -1,10 +1,7 @@
 package com.bridgelabz.linkedlist;
-/*Problem Statement UC-3
- * Ability to create Linked List by appending 30 and 70 to 56
-- Node with data 56 is First Created
-- Next Append 30 to 56
-- Finally Append 70 to 30
-- LinkedList Sequence: 56->30->70
+/*Problem Statement UC-4
+ * Ability to insert 30 between 56 and 70
+- Final Sequence: 56->30->70
  */
 class LinkedListOperations {
 	Node head;
@@ -21,7 +18,6 @@ class LinkedListOperations {
 		}
 		counter++; // Increement Counter
 	}
-
 	// Create method for insert element in last position
 	public void insertLast(int data) {
 		Node newNode = new Node(data);
@@ -36,7 +32,28 @@ class LinkedListOperations {
 		}
 		counter++;
 	}
-
+	//Create method for insert element in Nth Position
+		public void insertNthPosition(int data, int pos) {
+			Node newNode = new Node(data);
+			if(head == null) {
+				System.out.println("List is empty!!");
+			}
+			else if(pos <= 0 || pos > counter) {
+				System.out.println("Invalid Position!!");
+			}
+			else if(pos == 1) {
+				insertFirst(data);
+			}
+			else {
+				Node temp = head;
+				for(int i = 1; i < pos - 1 ; i++) {
+					temp = temp.next;
+				}
+				newNode.next = temp.next;
+				temp.next = newNode;
+			}
+			//counter++;
+		}
 	// Method for Display Element
 	public void display() {
 		if (head == null) {
@@ -50,5 +67,6 @@ class LinkedListOperations {
 		}
 
 	}
+		
 
 }
