@@ -1,9 +1,6 @@
 package com.bridgelabz.linkedlist;
-/*Problem Statement UC-6
- * Ability to delete the last element in the LinkedList of sequence 56->30->70 
- * - Write popLast method
-- Note there is new tail
-- Final Sequence: 56->30
+/*Problem Statement UC-7
+ * Ability to search LinkedList to find Node with value 30
  */
 class LinkedListOperations {
 	Node head;
@@ -95,8 +92,35 @@ class LinkedListOperations {
 				temp = temp.next;
 			}
 		}
-
 	}
+	 //method for search element
+	public void searchNode(int data) {  
+        Node current = head;  
+        int i = 1;  
+        boolean flag = false;  
+        //Checks whether list is empty  
+        if(head == null) {  
+            System.out.println("List is empty");  
+        }  
+        else {  
+            while(current != null) {  
+                 //Compares node to be found with each node present in the list  
+                if(current.data == data) {  
+                    flag = true;  
+                    break;  
+                }  
+                i++;  
+                current = current.next;  
+            }  
+        }  
+        if(flag)  
+             System.out.println("Element is present in the list at the position : " + i);  
+        else  
+             System.out.println("Element is not present in the list");  
+    }
+	
+  
+	
 		
 
 }
