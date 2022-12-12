@@ -1,6 +1,9 @@
 package com.bridgelabz.linkedlist;
-/*Problem Statement UC-7
- * Ability to search LinkedList to find Node with value 30
+/*Problem Statement UC-8
+ * Ability to insert 40 after 30 to the Linked List sequence of 56->30->70
+ * - Search LinkedList to get Node with key value 30
+- Then Insert 40 to 30
+- Final Sequence: 56->30->40->70
  */
 import java.util.Scanner;
 public class LinkedList {
